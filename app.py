@@ -211,7 +211,6 @@ with st.sidebar:
 st.markdown("""
 <div class="hero-banner">
   <div class="hero-badge">B.Tech Biotechnology — Final Year Project</div>
-  <p style="color:#CFE8F5; margin:4px 0 10px 0; font-size:0.85rem;">2300010066</p>
   <h1>🧬 Drug Discovery Pipeline</h1>
   <p>Virtual Screening Simulation · Live Protein Data (RCSB PDB) · ADMET Analysis · PDF Reports</p>
 </div>
