@@ -376,10 +376,10 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 font-family:Arial,sans-serif;
-box-shadow:0 10px 30px rgba(0,0,0,0.3);
+box-shadow:0 12px 35px rgba(0,0,0,0.35);
 ">
 
-<div>
+<div style="flex:1;">
 
     <div style="
         display:inline-block;
@@ -390,13 +390,14 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
         font-weight:bold;
         margin-bottom:12px;
     ">
-        🚀 AI-Assisted Drug Discovery Platform
+        🧬 Computational Drug Discovery Platform
     </div>
 
     <h1 style="
         margin:0;
-        font-size:52px;
+        font-size:42px;
         font-weight:800;
+        line-height:1.1;
     ">
         🧬 Drug Discovery Pipeline
     </h1>
@@ -404,18 +405,29 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
     <p style="
         margin-top:8px;
         font-size:15px;
-        opacity:0.95;
+        opacity:0.9;
     ">
         👨‍💻 Developed by N. Vamsi Krishna Reddy
     </p>
 
     <p style="
         margin-top:15px;
-        font-size:22px;
+        font-size:18px;
+        line-height:1.6;
     ">
-        Virtual Screening Simulation · Live Protein Data (RCSB PDB)
-        · ADMET Analysis · PDF Reports
+        Virtual Screening Simulation • Live Protein Data (RCSB PDB)
+        • ADMET Evaluation • Scientific Reporting
     </p>
+
+    <div style="
+        margin-top:15px;
+        font-size:15px;
+        opacity:0.95;
+    ">
+        🧬 Protein Analysis &nbsp;&nbsp; • &nbsp;&nbsp;
+        💊 ADMET Evaluation &nbsp;&nbsp; • &nbsp;&nbsp;
+        📄 PDF Reports
+    </div>
 
 </div>
 
@@ -423,9 +435,10 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
     background:rgba(255,255,255,0.15);
     padding:20px;
     border-radius:20px;
-    min-width:250px;
+    width:220px;
     text-align:center;
     backdrop-filter:blur(10px);
+    margin-left:20px;
 ">
 
     <div style="font-size:14px;">
@@ -434,14 +447,14 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 
     <div id="clock"
          style="
-         font-size:30px;
+         font-size:28px;
          font-weight:bold;
          margin-bottom:10px;
          ">
          --:--:--
     </div>
 
-    <hr>
+    <hr style="border:1px solid rgba(255,255,255,0.3);">
 
     <div style="font-size:14px;">
         ⏳ Time on Site
@@ -449,13 +462,13 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 
     <div id="timer"
          style="
-         font-size:24px;
+         font-size:22px;
          font-weight:bold;
          ">
          00:00
     </div>
 
-    <hr>
+    <hr style="border:1px solid rgba(255,255,255,0.3);">
 
     <div style="font-size:14px;">
         🟢 Platform Status
@@ -469,6 +482,14 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
         ONLINE
     </div>
 
+    <div style="
+        margin-top:10px;
+        font-size:12px;
+        opacity:0.8;
+    ">
+        Version 2.0
+    </div>
+
 </div>
 
 </div>
@@ -477,7 +498,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.3);
 
 let startTime = Date.now();
 
-function updateClock(){
+function updateClock() {
 
     const now = new Date();
 
@@ -485,10 +506,10 @@ function updateClock(){
         now.toLocaleTimeString();
 
     const elapsed =
-        Math.floor((Date.now() - startTime)/1000);
+        Math.floor((Date.now() - startTime) / 1000);
 
-    const mins = Math.floor(elapsed/60);
-    const secs = elapsed%60;
+    const mins = Math.floor(elapsed / 60);
+    const secs = elapsed % 60;
 
     document.getElementById("timer").innerHTML =
         String(mins).padStart(2,'0')
@@ -496,11 +517,11 @@ function updateClock(){
         String(secs).padStart(2,'0');
 }
 
-setInterval(updateClock,1000);
+setInterval(updateClock, 1000);
 updateClock();
 
 </script>
-""", height=280)
+""", height=300)
 
 tab_screen, tab_detail, tab_viewer, tab_future, tab_about = st.tabs([
     "🔬 Screening",
