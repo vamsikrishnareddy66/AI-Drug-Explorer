@@ -369,60 +369,104 @@ import streamlit.components.v1 as components
 components.html("""
 <div style="
 background: linear-gradient(135deg,#0052D4,#6A11CB,#FF0080);
-padding:35px;
-border-radius:25px;
+padding:45px;
+border-radius:30px;
 color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
 font-family:Arial,sans-serif;
+box-shadow:0 10px 30px rgba(0,0,0,0.3);
 ">
 
 <div>
+
     <div style="
         display:inline-block;
         background:#FF2E88;
-        padding:4px 12px;
+        padding:6px 14px;
         border-radius:20px;
         font-size:13px;
         font-weight:bold;
-        margin-bottom:10px;
+        margin-bottom:12px;
     ">
-        B.Tech Biotechnology — Final Year Project
+        🚀 AI-Assisted Drug Discovery Platform
     </div>
 
-    <h1 style="margin:0;">
+    <h1 style="
+        margin:0;
+        font-size:52px;
+        font-weight:800;
+    ">
         🧬 Drug Discovery Pipeline
     </h1>
 
-    <p style="margin-top:10px;">
+    <p style="
+        margin-top:8px;
+        font-size:15px;
+        opacity:0.95;
+    ">
+        👨‍💻 Developed by N. Vamsi Krishna Reddy
+    </p>
+
+    <p style="
+        margin-top:15px;
+        font-size:22px;
+    ">
         Virtual Screening Simulation · Live Protein Data (RCSB PDB)
         · ADMET Analysis · PDF Reports
     </p>
+
 </div>
 
 <div style="
     background:rgba(255,255,255,0.15);
     padding:20px;
-    border-radius:15px;
-    min-width:220px;
+    border-radius:20px;
+    min-width:250px;
     text-align:center;
+    backdrop-filter:blur(10px);
 ">
 
-    <div style="font-size:14px;">🕒 Current Time</div>
+    <div style="font-size:14px;">
+        🕒 Current Time
+    </div>
 
     <div id="clock"
-         style="font-size:28px;font-weight:bold;margin-bottom:10px;">
+         style="
+         font-size:30px;
+         font-weight:bold;
+         margin-bottom:10px;
+         ">
          --:--:--
     </div>
 
     <hr>
 
-    <div style="font-size:14px;">⏳ Time on Site</div>
+    <div style="font-size:14px;">
+        ⏳ Time on Site
+    </div>
 
     <div id="timer"
-         style="font-size:22px;font-weight:bold;">
+         style="
+         font-size:24px;
+         font-weight:bold;
+         ">
          00:00
+    </div>
+
+    <hr>
+
+    <div style="font-size:14px;">
+        🟢 Platform Status
+    </div>
+
+    <div style="
+        font-size:20px;
+        font-weight:bold;
+        color:#7CFF7C;
+    ">
+        ONLINE
     </div>
 
 </div>
@@ -456,13 +500,14 @@ setInterval(updateClock,1000);
 updateClock();
 
 </script>
-""", height=230)
+""", height=280)
+
 tab_screen, tab_detail, tab_viewer, tab_future, tab_about = st.tabs([
-    "🔬 Virtual Screening",
-    "💊 Compound Details",
-    "🧪 3D Protein Viewer",
-    "🚀 Future Upgrades",
-    "👨‍💻 About Me"
+    "🔬 Screening",
+    "💊 Compounds",
+    "🧬 3D Viewer",
+    "🚀 Future",
+    "👨‍💻 Developer"
 ])
 # ══════════════════════════════════════════════════════════════════════════
 # TAB 1: VIRTUAL SCREENING
