@@ -64,7 +64,7 @@ BG_CARD    = "#141B3A"     # Glass Card Background
 # ── Global CSS / theme ─────────────────────────────────────────────────────
 st.markdown(f"""
 <style>
-.stApp{
+.stApp {{
     background: linear-gradient(
         135deg,
         #081229 0%,
@@ -72,13 +72,13 @@ st.markdown(f"""
         #3B1C71 70%,
         #FF0080 100%
     );
-}
+}}
 /* ── Font & base ── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 html, body, [class*="css"] {{ font-family: 'Inter', sans-serif; }}
 
 /* ── Top banner gradient ── */
-.hero-banner {
+.hero-banner {{
     background: linear-gradient(
         135deg,
         #0052D4 0%,
@@ -90,7 +90,7 @@ html, body, [class*="css"] {{ font-family: 'Inter', sans-serif; }}
     margin-bottom: 25px;
     color: white;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-}
+}}
 .hero-badge {{
     display: inline-block; background: {GOLD}; color: white;
     border-radius: 20px; padding: 2px 12px; font-size: 0.78rem;
