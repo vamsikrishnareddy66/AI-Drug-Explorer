@@ -210,12 +210,65 @@ with st.sidebar:
 # ══════════════════════════════════════════════════════════════════════════
 st.markdown("""
 <div class="hero-banner">
-  <div class="hero-badge">B.Tech Biotechnology — Final Year Project</div>
-  <h1>🧬 Drug Discovery Pipeline</h1>
-  <p>Virtual Screening Simulation · Live Protein Data (RCSB PDB) · ADMET Analysis · PDF Reports</p>
-</div>
-""", unsafe_allow_html=True)
+    <div style="display:flex; justify-content:space-between; align-items:center;">
 
+        <div>
+            <div class="hero-badge">B.Tech Biotechnology — Final Year Project</div>
+            <h1>🧬 Drug Discovery Pipeline</h1>
+            <p>Virtual Screening Simulation · Live Protein Data (RCSB PDB) · ADMET Analysis · PDF Reports</p>
+        </div>
+
+        <div id="time-panel" style="
+            text-align:right;
+            background:rgba(255,255,255,0.15);
+            padding:15px;
+            border-radius:15px;
+            min-width:180px;
+        ">
+            <div id="current-time" style="font-size:1.4rem;font-weight:bold;">
+                --:--:--
+            </div>
+
+            <div style="font-size:0.8rem;">
+                Current Time
+            </div>
+
+            <hr>
+
+            <div id="time-spent" style="font-size:1.1rem;">
+                0s
+            </div>
+
+            <div style="font-size:0.8rem;">
+                Time on Site
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+const startTime = Date.now();
+
+function updateClock() {
+    const now = new Date();
+
+    document.getElementById("current-time").innerHTML =
+        now.toLocaleTimeString();
+
+    const elapsed = Math.floor((Date.now() - startTime)/1000);
+
+    const mins = Math.floor(elapsed/60);
+    const secs = elapsed%60;
+
+    document.getElementById("time-spent").innerHTML =
+        mins + "m " + secs + "s";
+}
+
+setInterval(updateClock,1000);
+updateClock();
+</script>
+""", unsafe_allow_html=True)
 # Navigation tabs
 tab_screen, tab_detail, tab_viewer, tab_future, tab_about = st.tabs([
     "🔬 Virtual Screening",
