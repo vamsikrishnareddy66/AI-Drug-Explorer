@@ -34,7 +34,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 import requests
 
-from modules import protein, screening, ranking, statistics, report
+import protein
+import screening
+import ranking
+import statistics
+import report
 
 # ── Page config ────────────────────────────────────────────────────────────
 st.set_page_config(
