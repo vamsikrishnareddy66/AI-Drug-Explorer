@@ -175,7 +175,10 @@ for key, default in [
 # ══════════════════════════════════════════════════════════════════════════
 # SIDEBAR
 # ══════════════════════════════════════════════════════════════════════════
-with st.sidebar:
+st.sidebar.image(
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/DNA_icon.svg/512px-DNA_icon.svg.png",
+    width=90
+)with st.sidebar:
 
     st.markdown("# 🧬 Drug Discovery Pipeline")
 
