@@ -301,7 +301,13 @@ updateClock();
 
 </script>
 """, height=230)
-
+tab_screen, tab_detail, tab_viewer, tab_future, tab_about = st.tabs([
+    "🔬 Virtual Screening",
+    "💊 Compound Details",
+    "🧪 3D Protein Viewer",
+    "🚀 Future Upgrades",
+    "👨‍💻 About Me"
+])
 # ══════════════════════════════════════════════════════════════════════════
 # TAB 1: VIRTUAL SCREENING
 # ══════════════════════════════════════════════════════════════════════════
