@@ -206,11 +206,12 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Navigation tabs
-tab_screen, tab_detail, tab_viewer, tab_future = st.tabs([
+tab_screen, tab_detail, tab_viewer, tab_future, tab_about = st.tabs([
     "🔬 Virtual Screening",
     "💊 Compound Details",
     "🧪 3D Protein Viewer",
     "🚀 Future Upgrades",
+    "👨‍💻 About Me"
 ])
 
 # ══════════════════════════════════════════════════════════════════════════
@@ -769,3 +770,55 @@ with tab_future:
         'validated scientific protocols before results can be used in research contexts.</div>',
         unsafe_allow_html=True,
     )
+with tab_about:
+
+    st.markdown("## 👨‍💻 About the Developer")
+
+    st.markdown("""
+### 🚀 AI-Driven Drug Discovery Pipeline
+
+This project was designed and developed by **Vamsi Krishna Reddy**
+as a B.Tech Biotechnology Final Year Project.
+
+### 🤖 Built With AI
+
+This platform was developed almost entirely using modern AI-assisted development tools including:
+
+- ChatGPT (OpenAI)
+- GitHub Copilot
+- AI Code Generation
+- Streamlit Cloud
+- Python Automation Tools
+
+### 🔬 Project Goal
+
+To create an accessible AI-powered platform for:
+
+- Protein Analysis
+- Virtual Compound Screening
+- ADMET Evaluation
+- Automated Research Reporting
+- Drug Discovery Education
+
+### 🌍 Vision
+
+The long-term goal is to evolve this platform into a complete AI-assisted drug discovery ecosystem capable of integrating:
+
+- Molecular Docking
+- Machine Learning Models
+- Deep Learning Predictions
+- Protein-Ligand Interaction Analysis
+- Clinical Research Support
+
+### 📚 Educational Disclaimer
+
+This platform is currently intended for educational, academic, and research demonstration purposes.
+
+### ❤️ Special Note
+
+This project demonstrates how modern AI tools can empower biotechnology students to build advanced computational biology platforms with minimal resources.
+
+**Developed by:** Vamsi Krishna Reddy  
+**Program:** B.Tech Biotechnology  
+**Institution:** KL University
+""")
