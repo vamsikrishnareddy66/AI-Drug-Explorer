@@ -208,75 +208,99 @@ with st.sidebar:
 # ══════════════════════════════════════════════════════════════════════════
 # HERO BANNER
 # ══════════════════════════════════════════════════════════════════════════
-st.markdown("""
-<div class="hero-banner">
-    <div style="display:flex; justify-content:space-between; align-items:center;">
+import streamlit.components.v1 as components
 
-        <div>
-            <div class="hero-badge">B.Tech Biotechnology — Final Year Project</div>
-            <h1>🧬 Drug Discovery Pipeline</h1>
-            <p>Virtual Screening Simulation · Live Protein Data (RCSB PDB) · ADMET Analysis · PDF Reports</p>
-        </div>
+components.html("""
+<div style="
+background: linear-gradient(135deg,#0052D4,#6A11CB,#FF0080);
+padding:35px;
+border-radius:25px;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+font-family:Arial,sans-serif;
+">
 
-        <div id="time-panel" style="
-            text-align:right;
-            background:rgba(255,255,255,0.15);
-            padding:15px;
-            border-radius:15px;
-            min-width:180px;
-        ">
-            <div id="current-time" style="font-size:1.4rem;font-weight:bold;">
-                --:--:--
-            </div>
-
-            <div style="font-size:0.8rem;">
-                Current Time
-            </div>
-
-            <hr>
-
-            <div id="time-spent" style="font-size:1.1rem;">
-                0s
-            </div>
-
-            <div style="font-size:0.8rem;">
-                Time on Site
-            </div>
-        </div>
-
+<div>
+    <div style="
+        display:inline-block;
+        background:#FF2E88;
+        padding:4px 12px;
+        border-radius:20px;
+        font-size:13px;
+        font-weight:bold;
+        margin-bottom:10px;
+    ">
+        B.Tech Biotechnology — Final Year Project
     </div>
+
+    <h1 style="margin:0;">
+        🧬 Drug Discovery Pipeline
+    </h1>
+
+    <p style="margin-top:10px;">
+        Virtual Screening Simulation · Live Protein Data (RCSB PDB)
+        · ADMET Analysis · PDF Reports
+    </p>
+</div>
+
+<div style="
+    background:rgba(255,255,255,0.15);
+    padding:20px;
+    border-radius:15px;
+    min-width:220px;
+    text-align:center;
+">
+
+    <div style="font-size:14px;">🕒 Current Time</div>
+
+    <div id="clock"
+         style="font-size:28px;font-weight:bold;margin-bottom:10px;">
+         --:--:--
+    </div>
+
+    <hr>
+
+    <div style="font-size:14px;">⏳ Time on Site</div>
+
+    <div id="timer"
+         style="font-size:22px;font-weight:bold;">
+         00:00
+    </div>
+
+</div>
+
 </div>
 
 <script>
-const startTime = Date.now();
 
-function updateClock() {
+let startTime = Date.now();
+
+function updateClock(){
+
     const now = new Date();
 
-    document.getElementById("current-time").innerHTML =
+    document.getElementById("clock").innerHTML =
         now.toLocaleTimeString();
 
-    const elapsed = Math.floor((Date.now() - startTime)/1000);
+    const elapsed =
+        Math.floor((Date.now() - startTime)/1000);
 
     const mins = Math.floor(elapsed/60);
     const secs = elapsed%60;
 
-    document.getElementById("time-spent").innerHTML =
-        mins + "m " + secs + "s";
+    document.getElementById("timer").innerHTML =
+        String(mins).padStart(2,'0')
+        + ":" +
+        String(secs).padStart(2,'0');
 }
 
 setInterval(updateClock,1000);
 updateClock();
+
 </script>
-""", unsafe_allow_html=True)
-# Navigation tabs
-tab_screen, tab_detail, tab_viewer, tab_future, tab_about = st.tabs([
-    "🔬 Virtual Screening",
-    "💊 Compound Details",
-    "🧪 3D Protein Viewer",
-    "🚀 Future Upgrades",
-    "👨‍💻 About Me"
-])
+""", height=230)
 
 # ══════════════════════════════════════════════════════════════════════════
 # TAB 1: VIRTUAL SCREENING
