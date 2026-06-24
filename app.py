@@ -369,14 +369,14 @@ import streamlit.components.v1 as components
 components.html("""
 <div style="
 background: linear-gradient(135deg,#0052D4,#6A11CB,#FF0080);
-padding:45px;
-border-radius:30px;
+padding:30px;
+border-radius:25px;
 color:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
 font-family:Arial,sans-serif;
-box-shadow:0 12px 35px rgba(0,0,0,0.35);
+box-shadow:0 8px 25px rgba(0,0,0,0.25);
 ">
 
 <div style="flex:1;">
@@ -384,110 +384,92 @@ box-shadow:0 12px 35px rgba(0,0,0,0.35);
     <div style="
         display:inline-block;
         background:#FF2E88;
-        padding:6px 14px;
+        padding:5px 12px;
         border-radius:20px;
         font-size:13px;
         font-weight:bold;
-        margin-bottom:12px;
+        margin-bottom:10px;
     ">
         🧬 Computational Drug Discovery Platform
     </div>
 
     <h1 style="
         margin:0;
-        font-size:42px;
+        font-size:30px;
         font-weight:800;
-        line-height:1.1;
+        line-height:1.2;
     ">
         🧬 Drug Discovery Pipeline
     </h1>
 
     <p style="
-        margin-top:8px;
-        font-size:15px;
+        margin-top:6px;
+        font-size:13px;
         opacity:0.9;
     ">
-        👨‍💻 Developed by N. Vamsi Krishna Reddy
+        👨‍💻 N. Vamsi Krishna Reddy
     </p>
 
     <p style="
-        margin-top:15px;
-        font-size:18px;
-        line-height:1.6;
+        margin-top:10px;
+        font-size:14px;
+        line-height:1.5;
     ">
-        Virtual Screening Simulation • Live Protein Data (RCSB PDB)
-        • ADMET Evaluation • Scientific Reporting
+        Virtual Screening • Live Protein Data (RCSB PDB)
+        • ADMET Evaluation • PDF Reports
     </p>
-
-    <div style="
-        margin-top:15px;
-        font-size:15px;
-        opacity:0.95;
-    ">
-        🧬 Protein Analysis &nbsp;&nbsp; • &nbsp;&nbsp;
-        💊 ADMET Evaluation &nbsp;&nbsp; • &nbsp;&nbsp;
-        📄 PDF Reports
-    </div>
 
 </div>
 
 <div style="
     background:rgba(255,255,255,0.15);
-    padding:20px;
-    border-radius:20px;
-    width:220px;
+    padding:15px;
+    border-radius:15px;
+    width:180px;
     text-align:center;
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(8px);
     margin-left:20px;
 ">
 
-    <div style="font-size:14px;">
+    <div style="font-size:12px;">
         🕒 Current Time
     </div>
 
     <div id="clock"
          style="
-         font-size:28px;
+         font-size:22px;
          font-weight:bold;
-         margin-bottom:10px;
+         margin-bottom:8px;
          ">
          --:--:--
     </div>
 
-    <hr style="border:1px solid rgba(255,255,255,0.3);">
+    <hr style="border:1px solid rgba(255,255,255,0.25);">
 
-    <div style="font-size:14px;">
+    <div style="font-size:12px;">
         ⏳ Time on Site
     </div>
 
     <div id="timer"
          style="
-         font-size:22px;
+         font-size:18px;
          font-weight:bold;
          ">
          00:00
     </div>
 
-    <hr style="border:1px solid rgba(255,255,255,0.3);">
+    <hr style="border:1px solid rgba(255,255,255,0.25);">
 
-    <div style="font-size:14px;">
-        🟢 Platform Status
+    <div style="font-size:12px;">
+        🟢 Status
     </div>
 
     <div style="
-        font-size:20px;
+        font-size:16px;
         font-weight:bold;
         color:#7CFF7C;
     ">
         ONLINE
-    </div>
-
-    <div style="
-        margin-top:10px;
-        font-size:12px;
-        opacity:0.8;
-    ">
-        Version 2.0
     </div>
 
 </div>
@@ -521,7 +503,7 @@ setInterval(updateClock, 1000);
 updateClock();
 
 </script>
-""", height=300)
+""", height=220)
 
 tab_screen, tab_detail, tab_viewer, tab_future, tab_about = st.tabs([
     "🔬 Screening",
