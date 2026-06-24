@@ -176,34 +176,186 @@ for key, default in [
 # SIDEBAR
 # ══════════════════════════════════════════════════════════════════════════
 with st.sidebar:
-    st.markdown("### 🧬 Drug Discovery Pipeline")
-    st.caption("Virtual Screening Simulation — B.Tech Biotech")
+
+    st.markdown("# 🧬 Drug Discovery Pipeline")
+
+    st.caption("AI-Assisted Drug Discovery Platform")
+
     st.markdown("---")
 
-    st.markdown("#### ℹ️ About")
-    st.write(
-        "This app performs **educational virtual screening**. Protein data "
-        "is fetched live from **RCSB PDB**. Scores are simulated using "
-        "compound properties (LogP, MW) + protein metadata."
+    st.success("🟢 System Status: Online")
+
+    st.markdown("### 🔬 Platform Overview")
+
+    st.info("""
+    Educational virtual screening platform integrating:
+
+    • Protein Structure Analysis
+
+    • Virtual Screening Simulation
+
+    • ADMET Evaluation
+
+    • Compound Ranking
+
+    • 3D Protein Visualization
+
+    • Automated Scientific Reporting
+    """)
+
+    st.markdown("---")
+
+    st.markdown("### 📊 Quick Statistics")
+
+    try:
+        total_compounds = len(pd.read_csv(DATA_PATH))
+    except:
+        total_compounds = "N/A"
+
+    st.metric(
+        "💊 Total Compounds",
+        total_compounds
     )
 
-    st.markdown("#### 🔗 Quick PDB Examples")
-    quick = {"SARS-CoV-2 Mpro": "6LU7", "Neuraminidase H5N1": "2HU4",
-             "HIV-1 Protease": "1HVR", "PI3K Kinase": "3POZ"}
-    for label, pid in quick.items():
-        st.caption(f"• **{pid}** — {label}")
+    if st.session_state.protein_info:
 
-    st.markdown("---")
-    st.markdown("#### 📜 Analysis History")
-    if st.session_state.history:
-        for i, e in enumerate(reversed(st.session_state.history[-5:]), 1):
-            st.write(f"**{i}.** {e['protein']} → {e['best_compound']}")
-            st.caption(f"   Simulated Score: {e['best_score']} kcal/mol")
+        st.metric(
+            "🧬 Current Protein",
+            st.session_state.protein_info.get(
+                "pdb_id",
+                "N/A"
+            )
+        )
+
+        st.metric(
+            "🔬 Method",
+            st.session_state.protein_info.get(
+                "method",
+                "N/A"
+            )
+        )
+
     else:
-        st.caption("No analyses run yet.")
+
+        st.metric(
+            "🧬 Current Protein",
+            "Not Loaded"
+        )
 
     st.markdown("---")
-    st.caption("⚠️ Scores shown are educational simulations and not actual docking results.")
+
+    st.markdown("### 🔗 Popular Protein Targets")
+
+    st.markdown("""
+**6LU7** — SARS-CoV-2 Main Protease
+
+**2HU4** — Influenza Neuraminidase
+
+**1HVR** — HIV-1 Protease
+
+**3POZ** — PI3K Kinase
+
+**1EQG** — COX-1 + Ibuprofen
+
+**4AKE** — Adenylate Kinase
+
+**1BNA** — DNA Dodecamer
+""")
+
+    st.markdown("---")
+
+    st.markdown("### 📜 Recent Analysis History")
+
+    if st.session_state.history:
+
+        for i, e in enumerate(
+            reversed(st.session_state.history[-5:]),
+            1
+        ):
+
+            st.markdown(
+                f"**{i}. {e['protein']}**"
+            )
+
+            st.caption(
+                f"{e['best_compound']}"
+            )
+
+            st.caption(
+                f"Score: {e['best_score']} kcal/mol"
+            )
+
+    else:
+
+        st.caption(
+            "No analyses performed yet."
+        )
+
+    st.markdown("---")
+
+    st.markdown("### ⚡ Features")
+
+    st.markdown("""
+✅ Live RCSB PDB Data
+
+✅ PDB Structure Download
+
+✅ Virtual Screening Simulation
+
+✅ Compound Ranking
+
+✅ ADMET Evaluation
+
+✅ Reference Ligand Comparison
+
+✅ Interactive 3D Protein Viewer
+
+✅ PDF Report Generation
+
+✅ Scientific Statistics Dashboard
+""")
+
+    st.markdown("---")
+
+    st.markdown("### 👨‍💻 Developer")
+
+    st.markdown("""
+**N. Vamsi Krishna Reddy**
+
+B.Tech Biotechnology
+
+KL University
+""")
+
+    st.markdown(
+        "[📸 Instagram](https://www.instagram.com/n_vamsi_reddie)"
+    )
+
+    st.markdown(
+        "[💻 GitHub](https://github.com/vamsikrishnareddy66)"
+    )
+
+    st.markdown(
+        "📧 vamsikrishnareddynemaildinne@gmail.com"
+    )
+
+    st.markdown("---")
+
+    st.warning("""
+⚠️ Educational Use Only
+
+Protein structures are real experimental data from RCSB PDB.
+
+Virtual screening scores are simulated and should not be used for actual drug discovery or clinical decisions.
+""")
+
+    st.markdown("---")
+
+    st.caption("🧬 Drug Discovery Pipeline v2.0")
+
+    st.caption(
+        "Powered by Python • Streamlit • RCSB PDB"
+    )
 
 # ══════════════════════════════════════════════════════════════════════════
 # HERO BANNER
