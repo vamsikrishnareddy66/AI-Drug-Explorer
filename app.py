@@ -48,7 +48,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-DATA_PATH   = "data/compounds.csv"
+DATA_PATH = "compounds.csv"
 EXPORTS_DIR = "exports"
 os.makedirs(EXPORTS_DIR, exist_ok=True)
 
