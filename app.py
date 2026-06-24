@@ -2,7 +2,7 @@
 app.py
 ------
 Drug Discovery Pipeline — Scientifically Accurate Edition
-B.Tech Biotechnology Final Year Project
+B.Tech Biotechnology KL UNIVERSITY
 
 All improvements implemented:
  1.  "Highest Simulated Score" replaces "Best Candidate"
