@@ -55,30 +55,42 @@ os.makedirs(EXPORTS_DIR, exist_ok=True)
 SCORE_COL = "simulated_score"   # column written by screening.py
 
 # ── Colour tokens ─────────────────────────────────────────────────────────
-TEAL_DARK  = "#0D4C6E"
-TEAL_MID   = "#1A7FA3"
-TEAL_LIGHT = "#D6EEF8"
-GOLD       = "#B5892A"
-GREEN_OK   = "#1B7340"
-BG_CARD    = "#F0F7FB"
-
+TEAL_DARK  = "#0B1026"     # Dark Navy
+TEAL_MID   = "#7B61FF"     # Purple
+TEAL_LIGHT = "#00D4FF"     # Neon Cyan
+GOLD       = "#FF2E88"     # Neon Pink
+GREEN_OK   = "#00FFB3"     # Neon Green
+BG_CARD    = "#141B3A"     # Glass Card Background
 # ── Global CSS / theme ─────────────────────────────────────────────────────
 st.markdown(f"""
 <style>
+.stApp{
+    background: linear-gradient(
+        135deg,
+        #081229 0%,
+        #1A1F4D 30%,
+        #3B1C71 70%,
+        #FF0080 100%
+    );
+}
 /* ── Font & base ── */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
 html, body, [class*="css"] {{ font-family: 'Inter', sans-serif; }}
 
 /* ── Top banner gradient ── */
-.hero-banner {{
-    background: linear-gradient(135deg, {TEAL_DARK} 0%, {TEAL_MID} 60%, #1EB3DC 100%);
-    border-radius: 12px;
-    padding: 28px 32px 22px;
-    margin-bottom: 20px;
+.hero-banner {
+    background: linear-gradient(
+        135deg,
+        #0052D4 0%,
+        #6A11CB 50%,
+        #FF0080 100%
+    );
+    border-radius: 25px;
+    padding: 40px;
+    margin-bottom: 25px;
     color: white;
-}}
-.hero-banner h1 {{ color: white; margin: 0 0 4px 0; font-size: 2rem; font-weight: 700; }}
-.hero-banner p  {{ color: #CFE8F5; margin: 0; font-size: 0.95rem; }}
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
 .hero-badge {{
     display: inline-block; background: {GOLD}; color: white;
     border-radius: 20px; padding: 2px 12px; font-size: 0.78rem;
