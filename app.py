@@ -43,7 +43,7 @@ import ranking
 import report
 import screening
 import docking  # our new docking engine
-from docking import DockingEngine, DockingConfig
+from docking import DockingEngine
 
 # ── Optional dependencies ──────────────────────────────────────────
 try:
