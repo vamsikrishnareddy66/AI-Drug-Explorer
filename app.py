@@ -1111,7 +1111,13 @@ def render_sidebar() -> None:
             st.caption("No analyses yet.")
 
         st.markdown("---")
-        st.markdown(f"**{DEVELOPER}**  \nB.Tech Biotechnology · {INSTITUTION}")
+        st.markdown(
+    "**N. Vamsi Krishna**  \n"
+    "**M. Karthik**  \n"
+    "**T. Vignesh**  \n"
+    "**K. Jagadeesh**  \n\n"
+    f"B.Tech Biotechnology · {INSTITUTION}"
+)
         st.markdown("[📸 Instagram](https://www.instagram.com/n_vamsi_reddie)  "
                     "[💻 GitHub](https://github.com/vamsikrishnareddy66)")
         st.markdown("---")
