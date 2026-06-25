@@ -83,10 +83,7 @@ DATA_PATH   = "compounds.csv"
 EXPORTS_DIR = "exports"
 SCORE_COL   = "simulated_score"
 APP_VERSION = "4.0"
-DEVELOPER = """N. Vamsi Krishna
-M. Karthik
-T. Vignesh
-K. Jagadeesh"""
+DEVELOPER = "N. Vamsi Krishna\nM. Karthik\nT. Vignesh\nK. Jagadeesh"
 INSTITUTION = "KL University"
 
 # Colour palette
