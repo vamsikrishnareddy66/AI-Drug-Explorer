@@ -40,85 +40,36 @@ import ranking
 import statistics
 import report
 
-# ═════════════════════════════════════════════════════════════════════════════
-# APPLICATION CONFIGURATION
-# ═════════════════════════════════════════════════════════════════════════════
+import os
+import streamlit as st
+
+# ═══════════════════════════════════════════════════════════════════════
+# PAGE CONFIGURATION
+# ═══════════════════════════════════════════════════════════════════════
 
 st.set_page_config(
     page_title="Drug Discovery Pipeline",
     page_icon="🧬",
     layout="wide",
-    initial_sidebar_state="expanded",
-    menu_items={
-        "About": """
-# 🧬 Drug Discovery Pipeline
-
-Version: 2.0
-
-Developed by:
-N. Vamsi Krishna Reddy
-
-B.Tech Biotechnology
-KL University
-
-AI-Assisted Drug Discovery Platform
-
-Educational Use Only
-"""
-    }
+    initial_sidebar_state="expanded"
 )
 
-# ═════════════════════════════════════════════════════════════════════════════
-# DIRECTORIES
-# ═════════════════════════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════════════════════
+# PATHS
+# ═══════════════════════════════════════════════════════════════════════
 
 DATA_PATH = "compounds.csv"
 
 EXPORTS_DIR = "exports"
+os.makedirs(EXPORTS_DIR, exist_ok=True)
 
-REPORTS_DIR = os.path.join(EXPORTS_DIR, "reports")
-
-CSV_DIR = os.path.join(EXPORTS_DIR, "csv")
-
-PDB_DIR = os.path.join(EXPORTS_DIR, "pdb")
-
-CACHE_DIR = "cache"
-
-for folder in [
-    EXPORTS_DIR,
-    REPORTS_DIR,
-    CSV_DIR,
-    PDB_DIR,
-    CACHE_DIR
-]:
-    os.makedirs(folder, exist_ok=True)
-
-# ═════════════════════════════════════════════════════════════════════════════
-# APPLICATION CONSTANTS
-# ═════════════════════════════════════════════════════════════════════════════
-
-APP_NAME = "Drug Discovery Pipeline"
-
-APP_VERSION = "2.0"
-
-DEVELOPER = "N. Vamsi Krishna Reddy"
-
-INSTITUTION = "KL University"
+# ═══════════════════════════════════════════════════════════════════════
+# CONSTANTS
+# ═══════════════════════════════════════════════════════════════════════
 
 SCORE_COL = "simulated_score"
 
-MAX_COMPOUNDS = 1000
-
 DEFAULT_PDB = "2HU4"
-
-DEFAULT_COMPOUNDS = 5
-
-CACHE_TTL = 3600
-
-RCSB_BASE_URL = "https://www.rcsb.org/structure"
-
-PUBCHEM_BASE_URL = "https://pubchem.ncbi.nlm.nih.gov"
-
 # ═════════════════════════════════════════════════════════════════════════════
 # PLATFORM INFORMATION
 # ═════════════════════════════════════════════════════════════════════════════
