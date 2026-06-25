@@ -961,13 +961,13 @@ def render_hero_banner() -> None:
     </div>
     <script>
       const t_start = Date.now();
-      function tick_header(){
+      function tick_header() {{
         const n = new Date();
         document.getElementById("sys-clock").textContent = n.toLocaleTimeString();
         const s = Math.floor((Date.now() - t_start)/1000);
         document.getElementById("sys-timer").textContent =
           String(Math.floor(s/60)).padStart(2,"0")+":"+String(s%60).padStart(2,"0");
-      }
+      }}
       setInterval(tick_header, 1000);
       tick_header();
     </script>
