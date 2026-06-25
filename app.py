@@ -920,11 +920,17 @@ def render_vina_tab() -> None:
             "⚠️ AutoDock Vina not found in PATH. Showing setup instructions and "
             "simulation mode. Install Vina to enable real docking."
         )
+    with st.expander("📦 AutoDock Vina Status", expanded=False):
+        if vina_ok:
+            st.success("✅ AutoDock Vina is available.")
+        else:
+            st.info("ℹ️ AutoDock Vina is not installed. Running in simulation mode.")
 
-    with st.expander("📦 AutoDock Vina Installation Guide", expanded=not vina_ok):
         st.markdown("""
-### Installing AutoDock Vina
+**Current Mode**
 
-**Option 1 — Conda (recommended)**
-```bash
-conda install -c conda-forge autodock-vina
+- Real docking: Available only if AutoDock Vina is installed.
+- Simulation mode: Used automatically when Vina is unavailable.
+
+You can continue using the application normally.
+""")
