@@ -1,79 +1,259 @@
-# 🧬 Drug Discovery Pipeline
-**Virtual Screening Simulation — B.Tech Biotechnology Final Year Project**
+# 🧬 AI Drug Discovery Platform
+
+> **An AI-powered Virtual Screening Platform for Drug Discovery**
+> **B.Tech Biotechnology Final Year Project**
 
 ---
 
-## What This App Does
+## 📖 Overview
 
-An educational Streamlit web application that simulates the virtual screening stage of drug discovery.
-It fetches **real protein data** from the RCSB Protein Data Bank and computes **simulated screening scores**
-based on compound physicochemical properties.
+The **AI Drug Discovery Platform** is an interactive web application developed using **Python** and **Streamlit** to demonstrate the computational stages of modern drug discovery.
 
-> ⚠️ **Scores shown are educational simulations and not actual docking results.**
+The platform integrates real biological data from public scientific databases with educational virtual screening algorithms, allowing users to explore protein targets, analyze candidate compounds, evaluate physicochemical properties, visualize molecular structures, and generate professional scientific reports.
 
----
-
-## Features
-
-| Feature | Details |
-|---|---|
-| Live Protein Data | Fetched from RCSB PDB API (name, organism, method, resolution, chains, ligands) |
-| Active Site Residues | Curated annotations for key drug targets |
-| Reference Ligand | Co-crystallized ligand info (e.g. Oseltamivir for 2HU4) |
-| ADMET Panel | MW, LogP, H-Donors, H-Acceptors, Rotatable Bonds, Lipinski Ro5 |
-| Compound Details | Name, formula, 2D/3D structure (PubChem), PubChem CID, DrugBank ID, SMILES |
-| 3D Protein Viewer | Embedded RCSB / NGL Viewer with ligand & active site highlighting |
-| Scientific Metrics | Compound count, avg MW, best/worst/avg scores, distribution chart |
-| PDF Report | Protein info · Reference ligand · ADMET · Ranking · Statistics · Disclaimer |
-| Future Upgrades | Roadmap to AutoDock Vina, DrugBank API, AI-based prediction, etc. |
+> **Educational Notice:** This application demonstrates computational workflows for educational and research purposes. Predicted scores are simulated unless generated using validated docking software.
 
 ---
 
-## Quick Start
+# ✨ Features
+
+## 🧬 Protein Analysis
+
+* Search proteins using PDB ID
+* Retrieve live protein metadata from the RCSB Protein Data Bank
+* Protein name
+* Organism
+* Experimental method
+* Resolution
+* Chains
+* Co-crystallized ligand
+* Active site information
+* Protein classification
+
+---
+
+## 💊 Compound Library
+
+Display comprehensive compound information including:
+
+* Compound Name
+* Molecular Formula
+* Molecular Weight
+* Canonical SMILES
+* PubChem CID
+* DrugBank ID
+* 2D Structure
+* 3D Structure
+
+---
+
+## 🧪 Virtual Screening
+
+Educational virtual screening pipeline with:
+
+* Compound ranking
+* Predicted binding affinity
+* Score comparison
+* Best candidate identification
+* Statistical analysis
+
+---
+
+## 📊 ADMET Analysis
+
+Automatically calculates:
+
+* Molecular Weight
+* LogP
+* Hydrogen Bond Donors
+* Hydrogen Bond Acceptors
+* Rotatable Bonds
+* Topological Polar Surface Area (TPSA)
+* Lipinski Rule of Five
+
+---
+
+## 📈 Scientific Analytics
+
+Interactive visualizations including:
+
+* Score Distribution
+* Molecular Weight Distribution
+* Lipinski Compliance
+* Property Correlation Matrix
+* Radar Comparison Charts
+* Screening Statistics
+
+---
+
+## 🧬 3D Molecular Visualization
+
+Interactive visualization of:
+
+* Protein Structure
+* Ligand Structure
+* Protein–Ligand Complex
+* Active Site
+
+---
+
+## 📄 Report Generation
+
+Generate downloadable scientific reports containing:
+
+* Protein Information
+* Compound Ranking
+* ADMET Properties
+* Molecular Structures
+* Statistical Summary
+* Scientific Disclaimer
+
+---
+
+## 🌐 External Database Integration
+
+The application integrates data from:
+
+* RCSB Protein Data Bank
+* PubChem
+* DrugBank
+
+---
+
+# 🛠 Technology Stack
+
+## Frontend
+
+* Streamlit
+
+## Backend
+
+* Python 3.11
+
+## Scientific Libraries
+
+* Pandas
+* NumPy
+* RDKit
+* Py3Dmol
+* Requests
+* Plotly
+* Matplotlib
+
+## APIs
+
+* RCSB PDB API
+* PubChem API
+* DrugBank
+
+---
+
+# 🚀 Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY.git
+cd YOUR_REPOSITORY
+```
+
+Install dependencies:
 
 ```bash
 pip install -r requirements.txt
+```
+
+Run the application:
+
+```bash
 streamlit run app.py
 ```
 
 ---
 
-## Validated PDB IDs
+# 🧬 Supported Protein Targets
 
-| PDB ID | Target | Reference Ligand |
-|---|---|---|
-| 2HU4 | Influenza H5N1 Neuraminidase | Oseltamivir (Tamiflu) |
-| 6LU7 | SARS-CoV-2 Main Protease | N3 Inhibitor |
-| 1HVR | HIV-1 Protease | XK263 Cyclic Urea |
-| 3POZ | PI3K Kinase | — |
-| 1ATP | cAMP-Dependent Protein Kinase | — |
-
----
-
-## Terminology
-
-| Old term | New (accurate) term |
-|---|---|
-| Docking Simulation | Virtual Screening Simulation |
-| Best Candidate | Highest Simulated Score |
+| PDB ID | Target                              |
+| ------ | ----------------------------------- |
+| 1TSR   | Human Thyroid Hormone Receptor Beta |
+| 2HU4   | Influenza H5N1 Neuraminidase        |
+| 6LU7   | SARS-CoV-2 Main Protease            |
+| 1HVR   | HIV-1 Protease                      |
+| 3POZ   | PI3K Kinase                         |
+| 1ATP   | cAMP-Dependent Protein Kinase       |
 
 ---
 
-## Disclaimer
+# 📊 Workflow
 
-This project is for **educational purposes only**. Protein 3D structures are real data from the
-[RCSB Protein Data Bank](https://www.rcsb.org). Simulated scores are calculated from a formula
-using compound properties and protein metadata — they **do not** represent results from validated
-docking software (e.g. AutoDock Vina) and must not be used for actual drug research or clinical
-decisions.
+1. Enter a Protein Data Bank (PDB) ID
+2. Retrieve protein information
+3. Load compound library
+4. Perform virtual screening
+5. Analyze ADMET properties
+6. Visualize molecular structures
+7. Compare candidate compounds
+8. Export scientific report
 
 ---
 
-## Future Upgrades (Roadmap)
+# 📂 Project Structure
 
-- AutoDock Vina integration for real molecular docking
-- DrugBank API for drug interaction data
-- PubChem API for live compound property fetching
-- AI-based lead prediction (GNN / ChemBERTa)
-- Molecular dynamics (MD) simulation via OpenMM
-- ADMET prediction via ADMETlab 2.0 API
+```text
+AI-Drug-Discovery-Platform/
+│
+├── app.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── packages.txt
+├── assets/
+├── data/
+├── exports/
+├── reports/
+├── utils/
+└── components/
+```
+
+---
+
+# ⚠ Scientific Disclaimer
+
+This software is intended exclusively for educational, research, and demonstration purposes.
+
+Protein structures are retrieved from the RCSB Protein Data Bank and compound information is obtained from publicly available scientific databases.
+
+Virtual screening scores presented by this application are computational predictions and must not be interpreted as experimentally validated molecular docking results or evidence of therapeutic efficacy.
+
+Any scientific conclusions should be supported through validated computational methods (e.g., AutoDock Vina) and experimental laboratory studies.
+
+---
+
+# 🔮 Future Enhancements
+
+* AutoDock Vina integration
+* Molecular Dynamics Simulation (OpenMM)
+* AI-based Lead Prediction
+* ChemBERTa Integration
+* Graph Neural Networks (GNN)
+* ADMETLab Integration
+* Protein–Ligand Interaction Maps
+* Batch Virtual Screening
+* Deep Learning Binding Affinity Prediction
+* Cloud Deployment
+
+---
+
+# 👨‍💻 Developer
+
+**Vamsi Krishna Reddy**
+
+B.Tech Biotechnology
+
+AI Drug Discovery Platform
+
+2026
+
+---
+
+## ⭐ If you found this project useful, consider giving it a star.
