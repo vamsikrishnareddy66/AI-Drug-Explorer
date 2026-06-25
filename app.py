@@ -82,8 +82,6 @@ PLATFORM_INFO = {
     "Protein Database": "RCSB PDB",
     "Compound Database": "PubChem",
 }
-```
-
 
 # ── Colour tokens ─────────────────────────────────────────────────────────
 TEAL_DARK  = "#0B1026"     # Dark Navy
