@@ -84,10 +84,12 @@ EXPORTS_DIR = "exports"
 SCORE_COL   = "simulated_score"
 APP_VERSION = "4.0"
 
-DEVELOPER = """N. Vamsi Krishna
-M. Karthik
-T. Vignesh
-K. Jagadeesh"""
+DEVELOPERS = [
+    "N. Vamsi Krishna",
+    "M. Karthik",
+    "T. Vignesh",
+    "K. Jagadeesh",
+]
 
 INSTITUTION = "KL University"
 
