@@ -87,111 +87,305 @@ PLATFORM_INFO = {
 }
 
 # ── Colour tokens ─────────────────────────────────────────────────────────
-TEAL_DARK  = "#0B1026"     # Dark Navy
-TEAL_MID   = "#7B61FF"     # Purple
-TEAL_LIGHT = "#00D4FF"     # Neon Cyan
-GOLD       = "#FF2E88"     # Neon Pink
-GREEN_OK   = "#00FFB3"     # Neon Green
-BG_CARD    = "#141B3A"     # Glass Card Background
+TEAL_DARK  = "#071A2F"     # Background
+TEAL_MID   = "#1E3A8A"     # Deep Blue
+TEAL_LIGHT = "#00E5FF"     # Neon Cyan
+GOLD       = "#FFD166"     # Gold
+GREEN_OK   = "#00F5A0"     # Emerald
+BG_CARD    = "#16213E"     # Card Background
 # ── Global CSS / theme ─────────────────────────────────────────────────────
 st.markdown(f"""
 <style>
+
+/* ===========================
+   GLOBAL BACKGROUND
+=========================== */
 .stApp {{
     background: linear-gradient(
         135deg,
-        #081229 0%,
-        #1A1F4D 30%,
-        #3B1C71 70%,
-        #FF0080 100%
+        #071A2F 0%,
+        #142850 30%,
+        #1E3A8A 65%,
+        #6A11CB 100%
     );
+    color: white;
 }}
-/* ── Font & base ── */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-html, body, [class*="css"] {{ font-family: 'Inter', sans-serif; }}
 
-/* ── Top banner gradient ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+html, body, [class*="css"] {{
+    font-family: 'Inter', sans-serif;
+    color: white;
+}}
+
+/* ===========================
+   HERO BANNER
+=========================== */
+
 .hero-banner {{
     background: linear-gradient(
         135deg,
         #0052D4 0%,
-        #6A11CB 50%,
-        #FF0080 100%
+        #6A11CB 55%,
+        #00D4FF 100%
     );
+
     border-radius: 25px;
     padding: 40px;
-    margin-bottom: 25px;
     color: white;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    box-shadow: 0 12px 35px rgba(0,0,0,.45);
 }}
+
+.hero-banner h1 {{
+    color:white;
+}}
+
+.hero-banner h3 {{
+    color:white;
+}}
+
+.hero-banner p {{
+    color:#EAF7FF;
+}}
+
 .hero-badge {{
-    display: inline-block; background: {GOLD}; color: white;
-    border-radius: 20px; padding: 2px 12px; font-size: 0.78rem;
-    font-weight: 600; margin-bottom: 10px;
+    display:inline-block;
+    background:{GOLD};
+    color:white;
+    padding:5px 15px;
+    border-radius:25px;
+    font-size:0.8rem;
+    font-weight:700;
 }}
 
-/* ── Section headers ── */
+/* ===========================
+   SECTION HEADER
+=========================== */
+
 .section-header {{
-    border-left: 4px solid {TEAL_MID}; padding-left: 12px;
-    color: {TEAL_DARK}; font-size: 1.15rem; font-weight: 700; margin: 20px 0 10px;
+    border-left:5px solid {TEAL_LIGHT};
+    padding-left:12px;
+    color:white;
+    font-size:1.2rem;
+    font-weight:700;
+    margin:25px 0 15px;
 }}
 
-/* ── Metric cards ── */
+/* ===========================
+   METRIC CARDS
+=========================== */
+
 .metric-card {{
-    background: {BG_CARD}; border: 1px solid #C2DFF0; border-radius: 10px;
-    padding: 16px 20px; text-align: center;
-}}
-.metric-card .val {{ font-size: 1.7rem; font-weight: 700; color: {TEAL_DARK}; }}
-.metric-card .lbl {{ font-size: 0.78rem; color: #555; margin-top: 2px; }}
+    background:rgba(20,27,58,.88);
+    border:1px solid rgba(0,212,255,.35);
+    border-radius:14px;
 
-/* ── Info box ── */
+    backdrop-filter:blur(12px);
+
+    padding:18px;
+    text-align:center;
+}}
+
+.metric-card .val {{
+    font-size:1.8rem;
+    font-weight:800;
+    color:{TEAL_LIGHT};
+}}
+
+.metric-card .lbl {{
+    color:#DCE9FF;
+    font-size:.82rem;
+}}
+
+/* ===========================
+   INFO BOX
+=========================== */
+
 .info-box {{
-    background: #EDF8FF; border: 1px solid #A8D8EF; border-radius: 8px;
-    padding: 14px 18px; font-size: 0.9rem; color: #1A4A6E;
+    background:rgba(0,212,255,.08);
+
+    border:1px solid rgba(0,212,255,.35);
+
+    border-radius:12px;
+
+    padding:16px;
+
+    color:#EAF7FF;
 }}
 
-/* ── Warning disclaimer ── */
+/* ===========================
+   DISCLAIMER
+=========================== */
+
 .disclaimer {{
-    background: #FFF8E6; border: 1px solid {GOLD}; border-radius: 8px;
-    padding: 10px 14px; font-size: 0.82rem; color: #7A5B0A; margin-top: 8px;
+    background:rgba(255,209,102,.08);
+
+    border:1px solid {GOLD};
+
+    border-radius:12px;
+
+    padding:14px;
+
+    color:#FFE7A0;
 }}
 
-/* ── Reference ligand card ── */
+/* ===========================
+   REFERENCE LIGAND
+=========================== */
+
 .ref-lig-card {{
-    background: linear-gradient(to right, #EDF8FF, #FFF8E6);
-    border: 1px solid #B0C8D8; border-radius: 10px; padding: 16px 18px;
+    background:rgba(20,27,58,.9);
+
+    border:1px solid rgba(0,212,255,.25);
+
+    border-radius:14px;
+
+    padding:18px;
+
+    color:white;
 }}
 
-/* ── Compound detail card ── */
+/* ===========================
+   COMPOUND CARD
+=========================== */
+
 .compound-card {{
-    background: white; border: 1px solid #D0E8F5;
-    border-radius: 10px; padding: 18px; margin-bottom: 12px;
+
+    background:rgba(20,27,58,.88);
+
+    border:1px solid rgba(123,97,255,.35);
+
+    border-radius:14px;
+
+    padding:18px;
+
+    margin-bottom:12px;
+
+    color:white;
+
+    backdrop-filter:blur(12px);
 }}
 
-/* ── Future roadmap ── */
+.compound-card b{{
+    color:{TEAL_LIGHT};
+}}
+
+/* ===========================
+   ROADMAP
+=========================== */
+
 .roadmap-item {{
-    background: white; border-left: 3px solid {TEAL_MID};
-    border-radius: 6px; padding: 8px 14px; margin: 6px 0;
-    font-size: 0.9rem; color: #1A3A4E;
+
+    background:rgba(20,27,58,.85);
+
+    border-left:4px solid {TEAL_LIGHT};
+
+    border-radius:10px;
+
+    padding:12px 16px;
+
+    margin:10px 0;
+
+    color:white;
 }}
 
-/* ── Sidebar ── */
+/* ===========================
+   SIDEBAR
+=========================== */
+
 section[data-testid="stSidebar"] {{
-    background: linear-gradient(180deg, {TEAL_DARK} 0%, #0A3550 100%);
-    color: white;
-}}
-section[data-testid="stSidebar"] * {{ color: white !important; }}
-section[data-testid="stSidebar"] .stTextInput input {{ color: #111 !important; }}
-section[data-testid="stSidebar"] .stSelectbox div {{ color: #111 !important; }}
 
-/* ── Tabs ── */
-.stTabs [data-baseweb="tab-list"] {{ gap: 8px; }}
+    background:linear-gradient(
+        180deg,
+        #071A2F,
+        #132B45
+    );
+}}
+
+section[data-testid="stSidebar"] * {{
+    color:white !important;
+}}
+
+section[data-testid="stSidebar"] .stTextInput input {{
+    color:black !important;
+}}
+
+section[data-testid="stSidebar"] .stSelectbox div {{
+    color:black !important;
+}}
+
+/* ===========================
+   TABS
+=========================== */
+
+.stTabs [data-baseweb="tab-list"] {{
+    gap:10px;
+}}
+
 .stTabs [data-baseweb="tab"] {{
-    background: #E8F4FA; border-radius: 8px 8px 0 0;
-    padding: 8px 18px; font-weight: 600; color: {TEAL_DARK};
+
+    background:rgba(20,27,58,.8);
+
+    color:white;
+
+    border-radius:12px 12px 0 0;
+
+    font-weight:700;
+
+    padding:10px 20px;
 }}
+
 .stTabs [aria-selected="true"] {{
-    background: {TEAL_MID} !important; color: white !important;
+
+    background:linear-gradient(
+        90deg,
+        #6A11CB,
+        #00D4FF
+    ) !important;
+
+    color:white !important;
 }}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.stButton>button {{
+
+    border-radius:12px;
+
+    border:none;
+
+    background:linear-gradient(
+        90deg,
+        #6A11CB,
+        #00D4FF
+    );
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.3s;
+}}
+
+.stButton>button:hover {{
+    transform:translateY(-2px);
+    box-shadow:0 8px 20px rgba(0,212,255,.4);
+}}
+
+/* ===========================
+   INPUTS
+=========================== */
+
+.stTextInput input,
+.stSelectbox div,
+.stNumberInput input {{
+
+    border-radius:10px !important;
+}}
+
 </style>
 """, unsafe_allow_html=True)
 
