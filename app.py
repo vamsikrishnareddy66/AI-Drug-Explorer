@@ -73,6 +73,10 @@ DEFAULT_PDB = "2HU4"
 # ═════════════════════════════════════════════════════════════════════════════
 # PLATFORM INFORMATION
 # ═════════════════════════════════════════════════════════════════════════════
+PLATFORM_INFO = {
+DEVELOPER = "N. Vamsi Krishna Reddy"
+INSTITUTION = "KL University"
+APP_VERSION = "2.0"
 
 PLATFORM_INFO = {
     "Developer": DEVELOPER,
